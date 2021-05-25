@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "modid",
   "version": "${version}",
-
+  
   "name": "Example Mod",
   "description": "Sleeping no longer causes spawn point setting.",
   "authors": [
@@ -12,20 +12,20 @@
     "homepage": "https://hollikill.net/",
     "sources": "https://github.com/hollikill/Amnesia"
   },
-
+  
   "license": "CC0-1.0",
   "icon": "assets/modid/icon.png",
-
+  
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.tetramc.amnesia"
+      "net.tetramc.amnesia.NoBedSpawn"
     ]
   },
   "mixins": [
     "modid.mixins.json"
   ],
-
+  
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",

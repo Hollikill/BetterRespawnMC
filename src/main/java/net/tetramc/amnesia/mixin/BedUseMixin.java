@@ -1,7 +1,7 @@
 package net.tetramc.amnesia.mixin;
 
 import net.minecraft.block.BedBlock;
-import net.minecraft.state.State;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -18,9 +18,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin({BedBlock.class})
 public class BedUseMixin {
   @Inject(at = {@At(value = "INVOKE", ordinal = 0)}, method = {"onUse"}, cancellable = true)
-  public void onSleep(State state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<Boolean> info) {
+  public void onSleep(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<Boolean> info) {
     ActionResult result = ((BedUseCallback)BedUseCallback.EVENT.invoker()).interact(player);
     if (result == ActionResult.FAIL)
-      info.cancel(); 
+        info.cancel();
   }
 }

@@ -4,9 +4,7 @@
   "package": "net.tetramc.amnesia.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  ],
-  "client": [
-    "BedUseMixin"
+    "SpawnSetMixin"
   ],
   "injectors": {
     "defaultRequire": 1
