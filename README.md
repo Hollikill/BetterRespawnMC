@@ -1,6 +1,6 @@
 # Better Sleep
 
-![MIT Badge](https://img.shields.io/badge/liscense-MIT-7a0?style=for-the-badge) ![Fabric Badge](https://img.shields.io/badge/Mod%20Loader-Fabric-eec?style=for-the-badge) ![VSCode Badge](https://img.shields.io/badge/IDE-VS%20Code-08c?style=for-the-badge) 
+![Liscense](https://img.shields.io/github/license/Hollikill/BetterRespawnMC?style=for-the-badge) ![Mod Loader](https://img.shields.io/badge/Mod%20Loader-Fabric-eec?style=for-the-badge) ![IDE](https://img.shields.io/badge/IDE-VS%20Code-08c?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/Hollikill/BetterRespawnMC?color=gold&logo=github&style=for-the-badge) ![Forks](https://img.shields.io/github/forks/Hollikill/BetterRespawnMC?logo=github&style=for-the-badge)
 
 ![Default Changes Infographic](https://github.com/Hollikill/Amnesia/blob/master/curseforge-resources/deafult_config_infographic.png?raw=true)
 
