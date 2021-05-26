@@ -1,5 +1,7 @@
 package net.tetramc.amnesia;
 
+import com.oroarmor.config.Config;
+
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
@@ -13,10 +15,13 @@ import net.minecraft.text.LiteralText;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.util.Formatting;
+import net.tetramc.amnesia.config.AmnesiaConfig;
 
 public class NoBedSpawn implements ModInitializer {
     public static final String MOD_ID = "Amnesia";
     
+    public static Config CONFIG = new AmnesiaConfig();
+
     public MinecraftClient client;
     public ServerWorld world;
     public MinecraftServer server;
@@ -24,7 +29,7 @@ public class NoBedSpawn implements ModInitializer {
     
     public void onInitialize() {
         // config stuff
-        //Config(List<ConfigItemGroup> configs, File configFile, String id)
+        // Config(List<ConfigItemGroup> configs, File configFile, String id)
 
         // global varible gathering
         ClientLifecycleEvents.CLIENT_STARTED.register((minecraftClient) -> {

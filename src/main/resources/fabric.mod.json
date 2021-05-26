@@ -19,7 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.tetramc.amnesia.NoBedSpawn"
+        "net.tetramc.amnesia.NoBedSpawn"
+    ],
+    "modmenu": [
+        "net.tetramc.amnesia.ModMenuIntegration"
     ]
   },
   "mixins": [
