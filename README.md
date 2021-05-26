@@ -1,6 +1,6 @@
 # Better Sleep
 
-![MIT badge](https://img.shields.io/badge/liscense-MIT-lightgrey)
+![MIT Badge](https://img.shields.io/badge/liscense-MIT-7a0?style=for-the-badge) ![Fabric Badge](https://img.shields.io/badge/Mod%20Loader-Fabric-eec?style=for-the-badge) ![VSCode Badge](https://img.shields.io/badge/IDE-VS%20Code-08c?style=for-the-badge) 
 
 ![Default Changes Infographic](https://github.com/Hollikill/Amnesia/blob/master/curseforge-resources/deafult_config_infographic.png?raw=true)
 
