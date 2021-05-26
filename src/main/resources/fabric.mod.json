@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "amnesiamod",
   "version": "${version}",
   
-  "name": "Example Mod",
-  "description": "Sleeping no longer causes spawn point setting.",
+  "name": "Amnesia",
+  "description": "Spawn point can only be set via a command.",
   "authors": [
     "Tetrasimplex"
   ],
@@ -13,8 +13,8 @@
     "sources": "https://github.com/hollikill/Amnesia"
   },
   
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/amnesiamod/icon.png",
   
   "environment": "*",
   "entrypoints": {
@@ -23,7 +23,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "amnesiamod.mixins.json"
   ],
   
   "depends": {

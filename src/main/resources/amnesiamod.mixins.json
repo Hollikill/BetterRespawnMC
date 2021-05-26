@@ -1,0 +1,12 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "net.tetramc.amnesia.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "mixins": [
+        "SpawnSetMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

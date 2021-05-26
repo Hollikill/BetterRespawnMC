@@ -1,7 +1,5 @@
 package net.tetramc.amnesia;
 
-import java.util.UUID;
-
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
@@ -14,11 +12,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
-import net.minecraft.world.World;
-import net.minecraft.world.level.ServerWorldProperties;
 
 public class NoBedSpawn implements ModInitializer {
     public static final String MOD_ID = "Amnesia";
@@ -29,6 +23,10 @@ public class NoBedSpawn implements ModInitializer {
     public PlayerManager pm;
     
     public void onInitialize() {
+        // config stuff
+        //Config(List<ConfigItemGroup> configs, File configFile, String id)
+
+        // global varible gathering
         ClientLifecycleEvents.CLIENT_STARTED.register((minecraftClient) -> {
             this.client = minecraftClient;
         });
@@ -38,15 +36,15 @@ public class NoBedSpawn implements ModInitializer {
             this.pm = this.server.getPlayerManager();
         });
         
+        // Mixin implementation
         SpawnSetCallback.EVENT.register((allowedSet) ->{
             // init debug message text
-            LiteralText debug = new LiteralText("");
+            LiteralText debug = new LiteralText("spawnpoint");
             // add debug message contents
-            addText(debug, new LiteralText("Interrupted setSpawn()      "), Formatting.RESET);
             if (allowedSet)
-                addText(debug, new LiteralText("Ran method"), Formatting.GREEN);
+                addText(debug, new LiteralText(" saved"), Formatting.GREEN);
             else
-                addText(debug, new LiteralText("Prevented run"), Formatting.RED);
+                addText(debug, new LiteralText(" cleared"), Formatting.RED);
             // debug message broadcast to all
             pm.broadcastChatMessage(debug, MessageType.GAME_INFO, PlayerEntity.getOfflinePlayerUuid("hollikill"));
 
@@ -54,34 +52,9 @@ public class NoBedSpawn implements ModInitializer {
                 return false;
             return true;
         });
-
-        /*BedUseCallback.EVENT.register((player) -> {
-            
-            // init debug message text
-            LiteralText debug = new LiteralText("");
-
-            // add debug message contents
-            addText(debug, new LiteralText(player.getUuidAsString()), Formatting.GRAY);
-            LiteralText playerCount = new LiteralText("\n"+server.getCurrentPlayerCount());
-            if (server.getCurrentPlayerCount() == 1) addText(debug, playerCount, Formatting.GREEN);
-            else addText(debug, playerCount, Formatting.RED);
-            LiteralText sleptLongEnough = new LiteralText("\n"+player.isSleepingLongEnough());
-            if (server.getCurrentPlayerCount() == 1) addText(debug, sleptLongEnough, Formatting.DARK_GREEN);
-            else addText(debug, sleptLongEnough, Formatting.DARK_RED);
-            addText(debug, new LiteralText("\n"+((World)world).getTimeOfDay()%24000), Formatting.YELLOW);
-            
-            // debug message send
-            player.sendMessage(debug, false);
-            
-            // actual sleep ability check
-            if (player.isSleepingLongEnough() && server.getCurrentPlayerCount() == 1) {
-                ((ServerWorldProperties)player.world.getLevelProperties()).setTimeOfDay(((World)world).getTimeOfDay()%24000);
-            }
-            
-            return ActionResult.FAIL;
-        });*/
     }
 
+    //just a simple shortcut function
     public void addText(MutableText baseText, MutableText appText, Formatting formatting) {
         baseText.append(appText.setStyle(Style.EMPTY.withFormatting(formatting)));
         return;
