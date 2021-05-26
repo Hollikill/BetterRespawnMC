@@ -75,7 +75,7 @@ jar {
 	}
 }
 
-Properties curseforge_properties = new Properties()
+/*Properties curseforge_properties = new Properties()
 String propPath = projectDir.getAbsolutePath()
 propPath += "/curseforge-resources/curseforge.properties"
 InputStream propLoader = new FileInputStream(propPath)
@@ -107,7 +107,7 @@ curseforge {
       debug = true
       forgeGradleIntegration = false
   }
-}
+}*/
 
 // configure the maven publication
 publishing {
