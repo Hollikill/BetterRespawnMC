@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version '0.7-SNAPSHOT'
 	id 'maven-publish'
+    id "com.matthewprenger.cursegradle" version "1.4.0"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -72,6 +73,40 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${project.archivesBaseName}"}
 	}
+}
+
+Properties curseforge_properties = new Properties()
+String propPath = projectDir.getAbsolutePath()
+propPath += "/curseforge-resources/curseforge.properties"
+InputStream propLoader = new FileInputStream(propPath)
+curseforge_properties.load(propLoader)
+propLoader.close()
+
+curseforge {
+  apiKey = curseforge_properties.api_key
+  project {
+    id = project.curse_id
+    changelog = file("changelog.md")
+    changelogType = 'markdown'
+    releaseType = project.curse_release
+    addGameVersion 'Fabric'
+    addGameVersion project.minecraft_version
+
+    mainArtifact(jar) {
+      relations {
+        optionalDependency 'modmenu'
+      }
+    }
+
+    afterEvaluate {
+        mainArtifact(remapJar)
+        uploadTask.dependsOn(remapJar)
+    }
+  }
+  options {
+      debug = true
+      forgeGradleIntegration = false
+  }
 }
 
 // configure the maven publication

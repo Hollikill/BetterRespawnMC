@@ -1,4 +1,4 @@
-package net.tetramc.amnesia.mixin;
+package net.tetramc.betterrespawn.mixin;
 
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,7 +11,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
-import net.tetramc.amnesia.SpawnSetCallback;
+import net.tetramc.betterrespawn.SpawnSetCallback;
 
 @Mixin({ServerPlayerEntity.class})
 public class SpawnSetMixin {

@@ -1,9 +1,9 @@
-package net.tetramc.amnesia;
+package net.tetramc.betterrespawn;
 
 import com.oroarmor.config.screen.*;
 
 public class ModMenuIntegration extends ModMenuConfigScreen {
 	public ModMenuIntegration() {
-		super(NoBedSpawn.CONFIG);
+		super(BetterRespawnMod.CONFIG);
 	}
 }

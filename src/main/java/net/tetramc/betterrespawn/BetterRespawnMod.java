@@ -1,6 +1,8 @@
-package net.tetramc.amnesia;
+package net.tetramc.betterrespawn;
 
-import com.oroarmor.config.Config;
+import java.util.List;
+
+import com.oroarmor.config.*;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
@@ -15,12 +17,14 @@ import net.minecraft.text.LiteralText;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.util.Formatting;
-import net.tetramc.amnesia.config.AmnesiaConfig;
+import net.tetramc.betterrespawn.config.BetterRespawnConfig;
 
-public class NoBedSpawn implements ModInitializer {
-    public static final String MOD_ID = "Amnesia";
+public class BetterRespawnMod implements ModInitializer {
+    public static final String MOD_ID = "betterrespawn";
     
-    public static Config CONFIG = new AmnesiaConfig();
+    public static Config CONFIG = new BetterRespawnConfig();
+
+    List<ConfigItem<?>> configs = CONFIG.getConfigs().get(0).getConfigs();
 
     public MinecraftClient client;
     public ServerWorld world;
@@ -28,9 +32,6 @@ public class NoBedSpawn implements ModInitializer {
     public PlayerManager pm;
     
     public void onInitialize() {
-        // config stuff
-        // Config(List<ConfigItemGroup> configs, File configFile, String id)
-
         // global varible gathering
         ClientLifecycleEvents.CLIENT_STARTED.register((minecraftClient) -> {
             this.client = minecraftClient;
@@ -45,6 +46,15 @@ public class NoBedSpawn implements ModInitializer {
         SpawnSetCallback.EVENT.register((allowedSet) ->{
             // init debug message text
             LiteralText debug = new LiteralText("spawnpoint");
+
+            if ((boolean)configs.get(0).getValue() == true) {
+                if (allowedSet)
+                    addText(debug, new LiteralText(" saved"), Formatting.GREEN);
+                else
+                    addText(debug, new LiteralText(" cleared"), Formatting.RED);
+                return (boolean)configs.get(1).getValue();
+            };
+
             // add debug message contents
             if (allowedSet)
                 addText(debug, new LiteralText(" saved"), Formatting.GREEN);

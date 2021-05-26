@@ -1,4 +1,4 @@
-package net.tetramc.amnesia.mixin;
+package net.tetramc.betterrespawn.mixin;
 
 import net.minecraft.block.BedBlock;
 import net.minecraft.block.BlockState;
@@ -7,7 +7,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.tetramc.amnesia.BedUseCallback;
+import net.tetramc.betterrespawn.BedUseCallback;
 import net.minecraft.entity.player.*;
 
 import org.spongepowered.asm.mixin.Mixin;

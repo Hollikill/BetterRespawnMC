@@ -1,4 +1,4 @@
-package net.tetramc.amnesia.config;
+package net.tetramc.betterrespawn.config;
 
 import java.io.File;
 import java.util.List;
@@ -10,11 +10,11 @@ import net.fabricmc.loader.api.FabricLoader;
 import com.oroarmor.config.*;
 import static com.google.common.collect.ImmutableList.of;
 
-public class AmnesiaConfig extends Config {
+public class BetterRespawnConfig extends Config {
     public static final ConfigItemGroup mainGroup = new MainGroup();
     public static final List<ConfigItemGroup> configs = of(mainGroup);
 
-    public AmnesiaConfig() {
+    public BetterRespawnConfig() {
         super(configs, new File(FabricLoader.getInstance().getConfigDir().toFile(), "amesia_config.json"), "amesia_config.json");
     }
 
@@ -23,7 +23,7 @@ public class AmnesiaConfig extends Config {
         public static final BooleanConfigItem modeBool = new BooleanConfigItem("Spawnpoints_Work", true, "This setting ONLY takes effect if Enable_Alternate_Mode is true");
 
         public MainGroup() {
-            super(of(doesAlt, modeBool), "Amnesia Settings");
+            super(of(doesAlt, modeBool), "betterrespawn Settings");
         }
     }
 }

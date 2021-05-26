@@ -1,4 +1,4 @@
-package net.tetramc.amnesia;
+package net.tetramc.betterrespawn;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;

@@ -1,32 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "amnesiamod",
+  "id": "betterrespawnmod",
   "version": "${version}",
   
-  "name": "Amnesia",
-  "description": "Spawn point can only be set via a command.",
+  "name": "Better Respawn",
+  "description": "The ability for beds and respawn anchors to set your spawn can be enabled or disabled (disabled by default).",
   "authors": [
     "Tetrasimplex"
   ],
   "contact": {
-    "homepage": "https://hollikill.net/",
-    "sources": "https://github.com/hollikill/Amnesia"
+    "homepage": "https://github.com/hollikill/betterrespawn",
+    "sources": "https://github.com/hollikill/betterrespawn"
   },
   
   "license": "MIT",
-  "icon": "assets/amnesiamod/icon.png",
+  "icon": "assets/betterrespawnmod/icon.png",
   
   "environment": "*",
   "entrypoints": {
     "main": [
-        "net.tetramc.amnesia.NoBedSpawn"
+        "net.tetramc.betterrespawn.BetterRespawnMod"
     ],
     "modmenu": [
-        "net.tetramc.amnesia.ModMenuIntegration"
+        "net.tetramc.betterrespawn.ModMenuIntegration"
     ]
   },
   "mixins": [
-    "amnesiamod.mixins.json"
+    "betterrespawnmod.mixins.json"
   ],
   
   "depends": {
@@ -35,6 +35,6 @@
     "minecraft": "1.16.x"
   },
   "suggests": {
-    "another-mod": "*"
+    "modmenu": "*"
   }
 }
