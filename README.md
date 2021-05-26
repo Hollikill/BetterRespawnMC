@@ -2,7 +2,7 @@
 
 ![Liscense](https://img.shields.io/github/license/Hollikill/BetterRespawnMC?style=for-the-badge) ![Mod Loader](https://img.shields.io/badge/Mod%20Loader-Fabric-eec?style=for-the-badge) ![IDE](https://img.shields.io/badge/IDE-VS%20Code-08c?style=for-the-badge) ![Stars](https://img.shields.io/github/stars/Hollikill/BetterRespawnMC?color=gold&logo=github&style=for-the-badge) ![Forks](https://img.shields.io/github/forks/Hollikill/BetterRespawnMC?logo=github&style=for-the-badge)
 
-![Default Changes Infographic](https://github.com/Hollikill/Amnesia/blob/master/curseforge-resources/deafult_config_infographic.png?raw=true)
+![Default Changes Infographic](https://github.com/Hollikill/Amnesia/blob/master/curseforge-resources/deafult_config_infographic_transparent.png?raw=true)
 
 Visit the [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/better-respawn-fabric) for the details of the mod.
 
