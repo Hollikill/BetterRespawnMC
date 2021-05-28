@@ -1,7 +1,3 @@
-# curseforge secret token
-
-curseforge-resources/curseforge.properties
-
 # gradle
 
 .gradle/
